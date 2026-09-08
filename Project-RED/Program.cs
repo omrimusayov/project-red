@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Project_RED.Models;
+
 namespace Project_RED
 {
     public class Program
@@ -8,7 +11,8 @@ namespace Project_RED
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
