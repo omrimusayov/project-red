@@ -1,8 +1,6 @@
-﻿using Project_RED.Models;
-
-namespace project_red.Models
+﻿namespace project_red.Models
 {
-    public class student
+    public class Student
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

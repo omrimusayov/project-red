@@ -95,7 +95,7 @@ namespace Project_RED.Migrations
                     b.ToTable("Teachers");
                 });
 
-            modelBuilder.Entity("project_red.Models.student", b =>
+            modelBuilder.Entity("project_red.Models.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -127,7 +127,7 @@ namespace Project_RED.Migrations
 
             modelBuilder.Entity("project_red.Models.Course", b =>
                 {
-                    b.HasOne("project_red.Models.student", null)
+                    b.HasOne("project_red.Models.Student", null)
                         .WithMany("Courses")
                         .HasForeignKey("studentId");
                 });
@@ -140,7 +140,7 @@ namespace Project_RED.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("project_red.Models.student", "Student")
+                    b.HasOne("project_red.Models.Student", "Student")
                         .WithMany("Enrollments")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -151,7 +151,7 @@ namespace Project_RED.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("project_red.Models.student", b =>
+            modelBuilder.Entity("project_red.Models.Student", b =>
                 {
                     b.HasOne("project_red.Models.Teacher", "Teacher")
                         .WithMany("Students")
@@ -170,7 +170,7 @@ namespace Project_RED.Migrations
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("project_red.Models.student", b =>
+            modelBuilder.Entity("project_red.Models.Student", b =>
                 {
                     b.Navigation("Courses");
 

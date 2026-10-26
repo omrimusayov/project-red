@@ -24,7 +24,7 @@ namespace Project_RED.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("project_red.Models.student", b =>
+            modelBuilder.Entity("project_red.Models.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

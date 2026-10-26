@@ -7,6 +7,6 @@
         public string LastName { get; set; }
         public string Subject { get; set; }
 
-        public ICollection<student> Students { get; set; } = new List<student>();
+        public ICollection<Student> Students { get; set; } = new List<Student>();
     }
 }
