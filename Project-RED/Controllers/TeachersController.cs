@@ -27,7 +27,9 @@ public class TeachersController : Controller
             return NotFound();
         }
 
-        var teacher = await _context.Teachers.Include(t => t.Students).FirstOrDefaultAsync(m => m.Id == id);
+        var teacher = await _context.Teachers
+            .Include(t => t.Students)
+            .FirstOrDefaultAsync(m => m.Id == id);
         if (teacher == null)
         {
             return NotFound();
@@ -47,7 +49,7 @@ public class TeachersController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Subject,Students")] Teacher teacher)
+    public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Subject")] Teacher teacher)
     {
         if (ModelState.IsValid)
         {
@@ -79,7 +81,7 @@ public class TeachersController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? id, [Bind("Id,FirstName,LastName,Subject,Students")] Teacher teacher)
+    public async Task<IActionResult> Edit(int? id, [Bind("Id,FirstName,LastName,Subject")] Teacher teacher)
     {
         if (id != teacher.Id)
         {

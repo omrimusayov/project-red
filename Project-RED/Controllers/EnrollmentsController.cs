@@ -118,7 +118,7 @@ public class EnrollmentsController : Controller
         }
 
         var enrollment = await _context.Enrollments
-            .FirstOrDefaultAsync(m => m.Id == id);
+.FirstOrDefaultAsync(m => m.Id == id);
         if (enrollment == null)
         {
             return NotFound();

@@ -29,3 +29,112 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* 1. עיצוב הכרטיס העליון של טבלת האב */
+.parent-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+    /* 2. עיצוב כותרת הכרטיס */
+    .parent-card h2 {
+        font-size: 1.75rem;
+        color: #343a40;
+        border-bottom: 2px solid #007bff;
+        letter-spacing: 0.5px;
+    }
+
+/* 3. עיצוב תתוית השדות */
+.field-label {
+    font-weight: bold;
+    color: #495057;
+    display: inline-block;
+    width: 120px;
+}
+
+/* עיצוב הטבלה כולה */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+    table-layout: fixed; /* שומר על עמודות מסודרות וישרות */
+}
+
+    /* כותרת הטבלה ותאי הנתונים - יישור אחיד */
+    .data-table th, .data-table td {
+        padding: 12px;
+        text-align: left; /* יישור לימין (או center אם מעדיף באמצע) */
+        border-bottom: 1px solid #dee2e6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .data-table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+/* 7. שורות בצבעים מתחלפים בטבלה */
+tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+/* 8. שורה שהעכבר עליה */
+tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 9. עיצוב כפתור/קישור פרטים בטבלה */
+.btn-details {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    /* 10. קישור כשהעכבר עליו */
+    .btn-details:hover {
+        background-color: #218838;
+        opacity: 0.9;
+    }
+.btn-edit {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    /* 10. קישור כשהעכבר עליו */
+    .btn-edit:hover {
+        background-color: #218838;
+        opacity: 0.9;
+    }
+.btn-delete {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    /* 10. קישור כשהעכבר עליו */
+    .btn-delete:hover {
+        background-color: #218838;
+        opacity: 0.9;
+    }
+
+/* 11. הודעה שאין רשומות */
+.empty-message {
+    color: #856404;
+    font-style: italic;
+    background-color: #fff3cd;
+    padding: 12px;
+}
